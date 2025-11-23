@@ -1,0 +1,123 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% --------------------------------------------------------
+% Rhobabel
+% LaTeX Package
+% Version 1.0.1 (14/08/2024)
+%
+% Authors: 
+% Guillermo Jimenez (memo.notess1@gmail.com)
+% Eduardo Gracidas (eduardo.gracidas29@gmail.com)
+% 
+% License:
+% Creative Commons CC BY 4.0
+% --------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% --------------------------------------------------------
+%                        WARNING!
+% --------------------------------------------------------
+% Do not remove this package from 'rho-class/rho.cls' to 
+% avoid compilation problems. This package defines the 
+% translation to spanish for some parts of the text.
+% --------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------
+% PACKAGE CONFIGURATION
+%----------------------------------------------------------
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{rho-class/rhobabel}[2024/05/21]
+
+%----------------------------------------------------------
+% KEYWORDS WORD
+%----------------------------------------------------------
+
+\newcommand{\keywordname}{{\keywordheadfont Keywords: }}
+
+%----------------------------------------------------------
+% AUTHOR "AND" LANGUAGES
+%----------------------------------------------------------
+
+\newcommand{\andlanguage}{
+    \iflanguage{spanish}{
+        { y }%
+    }{%
+        { and }%
+    }%
+}
+
+%----------------------------------------------------------
+% ARTICLE INFORMATION LANGUAGES
+%----------------------------------------------------------
+
+% Change manually the second {} if using another language babel
+
+\newcommand{\correslanguage}{
+    \iflanguage{spanish}{
+        {Autor de correspondencia: }%
+    }{%
+        {Corresponding author: }%
+    }%
+}
+
+\newcommand{\emaillanguage}{
+    \iflanguage{spanish}{
+        {Correo electr\'onico: }%
+    }{%
+        {E-mail address: }%
+    }%
+}
+
+\newcommand{\receivedlanguage}{
+    \iflanguage{spanish}{
+        {Recibido: }%
+    }{%
+        {Received: }%
+    }%
+}
+
+\newcommand{\revisedlanguage}{
+    \iflanguage{spanish}{
+        {Revisado: }%
+    }{%
+        {Revised: }%
+    }%
+}
+
+\newcommand{\acceptedlanguage}{
+    \iflanguage{spanish}{
+        {Aceptado: }%
+    }{%
+        {Accepted: }%
+    }%
+}
+
+\newcommand{\publishedlanguage}{
+    \iflanguage{spanish}{
+        {Publicado: }%
+    }{%
+        {Published: }%
+    }%
+}
+
+%----------------------------------------------------------
+% ENVIRONMENTS LANGUAGES
+%----------------------------------------------------------
+
+% Information/Informaci\'on language setup
+\newcommand{\infolanguage}{
+    \iflanguage{spanish}{
+        {\bfseries\noindent Informaci\'on}%
+    }{%
+        {\bfseries\noindent Information}%
+    }%
+}
+
+% Note/Nota language setup
+\newcommand{\notelanguage}{
+    \iflanguage{spanish}{
+        {\bfseries\noindent Nota}%
+    }{%
+        {\bfseries\noindent Note}%
+    }%
+}
