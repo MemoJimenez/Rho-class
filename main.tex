@@ -1,376 +1,426 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % --------------------------------------------------------
-% Rho
-% LaTeX Template
-% Version 2.1.1 (01/09/2024)
+%  ____  _           
+% |  _ \| |__   ___  
+% | |_) | '_ \ / _ \ 
+% |  _ <| | | | (_) |
+% |_| \_\_| |_|\___/ 
 %
-% Authors: 
+% LaTeX2e Template
+% Version 3.0.0 (24/02/2026)
+%
+% Author: 
 % Guillermo Jimenez (memo.notess1@gmail.com)
-% Eduardo Gracidas (eduardo.gracidas29@gmail.com)
 % 
+% Contributor:
+% Eduardo Gracidas (eduardo.gracidas29@gmail.com)
+%
 % License:
 % Creative Commons CC BY 4.0
 % --------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% --------------------------------------------------------
+% Find the latest version on GitHub:
+% https://github.com/MemoJimenez/Rho-class
+% --------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[9pt,a4paper,twoside]{rho-class/rho}
+\documentclass[9pt,a4paper,twocolumn,twoside]{rho-class/rho}
 \usepackage[english]{babel}
 
 %% Spanish babel recomendation
 % \usepackage[spanish,es-nodecimaldot,es-noindentfirst]{babel}
 
-\setbool{rho-abstract}{true} % Set false to hide the abstract
-\setbool{corres-info}{true} % Set false to hide the corresponding author section
-
 %----------------------------------------------------------
-% TITLE
+% Title
 %----------------------------------------------------------
 
-\journalname{Example Template}
-\title{Template for preparing an academic article or lab report using the rho \LaTeX\ class in Overleaf}
+\doctype{Documentation Template}
+\title{Preparing a research article or lab report with rho-class}
 
 %----------------------------------------------------------
-% AUTHORS AND AFFILIATIONS
+% Authors, Affiliations and dates
 %----------------------------------------------------------
 
-\author[1,$\dagger$]{Author One}
-\author[2]{Author Two}
-\author[3,$\dagger$]{Author Three}
+\author[{\textasteriskcentered},a,1]{Author One}
+\author[{\textdagger},b,2]{Author Two}
+\author[{\textdagger},c,3]{Author Three}
 
 %----------------------------------------------------------
 
-\affil[1]{Affiliation of author one}
-\affil[2]{Affiliation of author two}
-\affil[3]{Affiliation of author three}
-\affil[$\dagger$]{These authors contributed equally to this work}
+\affil[a]{Affiliation of author one}
+\affil[b]{Affiliation of author two}
+\affil[c]{Affiliation of author three}
 
 %----------------------------------------------------------
-% DATES
-%----------------------------------------------------------
 
-\dates{This manuscript was compile on September 1, 2024}
+\dates{This manuscript was compile on February 24, 2026}
 
 %----------------------------------------------------------
-% FOOTER INFORMATION
+% Corresponding author-, Document- information
 %----------------------------------------------------------
 
-\leadauthor{Author last name et al.}
-\footinfo{Creative Commons CC BY 4.0}
-\smalltitle{\LaTeX\ Template}
-\institution{College name}
-\theday{May 21, 2024} %\today
+\corres{\textsuperscript{\textasteriskcentered}Corresponding author: \href{mailto:author.one@institute.org}{author.one@institute.org} (A. One).}
+\corres{\textsuperscript{\textdagger}These authors contributed equally to this work.}
 
 %----------------------------------------------------------
-% ARTICLE INFORMATION
-%----------------------------------------------------------
 
-\corres{Provide the corresponding author information and publisher here.}
-\email{example@organization.com.}
-\doi{\url{https://www.doi.org/exampledoi/XXXXXXXXXX}}
-
-\received{March 20, 2024}
-\revised{April 16, 2024}
-\accepted{April 20, 2024}
-\published{May 21, 2024}
-
-\license{Rho LaTeX Class \ccLogo\ This document is licensed under Creative Commons CC BY 4.0.}
+\docinfo{This document class was prepared on Overleaf and compiled with pdf\LaTeX{}. No errors were found during the compilation process. Rho-class supports external editors, though additional setup may be required.} 
 
 %----------------------------------------------------------
-% ABSTRACT
+
+\journalname{LATEX}
+\journal{Rho-class (v.3) 2026}
+\theday{\today}
+\vol{X}
+\no{X}
+
+%----------------------------------------------------------
+% Abstract and Keywords
 %----------------------------------------------------------
 
 \begin{abstract}
-    Welcome to rho ($\rho$) \LaTeX\ class for making academic articles and lab reports. In this example template, we will guide you through the process of using and customizing the document to your needs. For more information of this class check out the appendix section. There, you will find codes that define key aspects of the template, allowing you to explore and modify them. If you do not need the abstract set \textit{false} to rho-abstract. It is worth to mention that this template is inspired by an earlier work, the \href{https://es.overleaf.com/latex/templates/tau-class-lab-report-template/chhshmhxstsq}{tau} \LaTeX\ class, designed with academic intentions.
+    Rho-class was designed for creating professional \LaTeX{} documents, including research articles, technical reports, and academic documentation. It enhances the writing experience through intuitive custom environments, multilingual support, and refined typography. The class integrates Fira Sans for headings and highlighted elements, Fira Mono for code listings, and STIX2 for body text, ensuring consistent styling across tables, figures, equations, listings, and captions. It is worth to mention that this template is inspired by an earlier work, the \href{https://es.overleaf.com/latex/templates/tau-class-lab-report-template/chhshmhxstsq}{tau-class}. \textit{New or updated features are marked with an asterisk (*)}.
 \end{abstract}
 
 %----------------------------------------------------------
 
-\keywords{keyword 1, keyword 2, keyword 3, keyword 4, keyword 5}
+\keywords{Rho-class, Research Article, Laboratory Report, Academic Writing, Journal}
 
 %----------------------------------------------------------
 
 \begin{document}
-	
+
     \maketitle
     \thispagestyle{firststyle}
-    % \tableofcontents
-    \linenumbers
 
 %----------------------------------------------------------
 
-\section{Introduction}
+\section{Rho Class}
 
-    \rhostart{W}elcome to \textit{rho class} template for preparing your academic article or lab report. Throughout this guide, we will show you how to use this template and how to make modifications to this class. 
-    
-    This class includes the following files placed in the ‘rho-class’ folder: rho.cls, rhoenvs.sty, rhobabel.sty and README.md.
+    \rhostart{R}ho-class is specially designed for research articles, technical/lab reports, and academic documentation. This guide will help you understand the features and proper use of the template, enabling you to efficiently structure and format your documents with clarity and precision.
 
-\section{Title}
+    This class includes the following files in the rho-class folder:
+	
+	\begin{itemize}
+		\item \inlinecode{rho.cls} — The main class file.
+		\item \inlinecode{rhoenvs.sty} — A package containing custom environments.
+		\item \inlinecode{rhobabel.sty} — A support package for multilingual.
+		\item \inlinecode{README.md} — With essential information.
+	\end{itemize}
 
-    The \verb|\maketitle| command generates the title information, abstract and corresponding author information. The following sections describe each of these.
+    Additionally, this template includes a sample document \inlinecode{main.tex}, a bibliography file \inlinecode{rho.bib}, as well as figures, tables and code examples to help you get started quickly.
 
-    In addition to the \verb|\title| command, a new command named \verb|\journalname| has been added to include more information. 
+    \subsection{License}
 
-    If you do not need this command, you can undefined it and the content will be adjusted automatically.
+        This template was developed by Guillermo Jimenez, licensed under Creative Commons CC BY 4.0. You are free to adapt, share, and distribute it, provided that proper credit is given to the original author.
 
-    \subsection{Abstract}
+\section{Document Styling}
 
-        The abstract is placed with \verb|\begin{abstract} \end{abstract}| command and is declared in the preamble. Then, the keywords are placed with the command \verb|\keywords{}|. If the keywords are not declared in the preamble, the content will be adjusted automatically.
+    \subsection{Document Type}
 
-    \subsection{Corresponding author}
-
-        Rho includes a section for corresponding author information. In this section you can easily add important information about your article, such as doi, publication dates, and license.
-
-        If you do not need this section, you can disable it directly from the main.tex. Set \textit{false} in \verb|\setbool{corres-info}{true/false}|. The content will be adjusted automatically and no modifications to the class document will be necessary.
+        Before the main title, a brief descriptor indicates the type of document (e.g., Lab Report, Research Article, etc). This is controlled by the \inlinecode{\doctype{}} command. 
         
-        If you want this section but, for example, you do not need the doi, just do not declare the command in the preamble and the content will be adjusted automatically.
+        If no such label is needed, omit the command and the title will automatically reposition itself to maintain proper vertical spacing and visual alignment.
 
-\section{Other elements}
+    \subsection{Abstract and Keywords}
+
+        The abstract and keywords are declared in the preamble of the document with \inlinecode{\begin{abstract}...\end{abstract}} environment alongside the dedicated \inlinecode{\keywords{}} command to allow the class file to automatically handle their formatting and positioning during the title creation process.
 
     \subsection{Lettrine}
-    
-        The \verb*|\rhostart{}| command provides a personalized lettrine for the beginning of a paragraph as shown in this document example.
 
-    \subsection{Line numbering}
+		The \inlinecode{\rhostart{}} command, provides a personalized lettrine for the beginning of the first paragraph as shown in this example.
 
-        By implementing the \textit{lineno} package, the line numbering of the document can be placed with the command \verb|\linenumbers|. 
-		
-        I recommend placing the command after the table of contents for a better appearance (comment or delete if not required).
+	\subsection{Table of Contents}
 
-\section{Equation}
+        This class includes a customized design for the table of contents, which is disabled by default. To enable it, insert the \inlinecode{\tableofcontents} command before your first section.
 
-    Equation \ref{ec:equation}, shows the Schrödinger equation as an example. 
-        \begin{equation} \label{ec:equation}
-            \frac{\hbar^2}{2m}\nabla^2\Psi + V(\mathbf{r})\Psi = -i\hbar \frac{\partial\Psi}{\partial t}
-        \end{equation} 
-    The \textit{amssymb} package was not necessary to include, because stix2 font incorporates mathematical symbols for writing quality equations. In case you choose another font, uncomment the package in \textit{rho class}.
+\section{Cross-Reference Commands*}
 
-    In case you want to change the values that adjust the spacing above and below in the equations, go to \textit{rho-class/rho.cls/math packages} section and play with \verb|\setlength{\eqskip}{8pt}| value until the preferred spacing is set.
+    Rho-class provides shorthand commands for cross-referencing figures, tables, code listings, and equations. To customize the label format, edit the \inlinecode{rhobabel.sty} file. Label translations for Spanish are handled automatically.
 
-\section{Rho packages}
-
-    \subsection{Rhoenvs}
-    
-        This template has its own environment package \textit{rhoenvs.sty} designed to enhance the presentation of information within documents. Among these custom environments are \textit{rhoenv}, \textit{info} and \textit{note}.
-    
-        There are two environments which have a predefined title. These can be included by the command \verb|\begin{note}| and \verb|\begin{info}|. All the environments have the same style.
-    	
-        An example using the rho environment is shown below.
-    
-        \begin{rhoenv}[frametitle=Environment with custom title]
-            Hello! I am an example of the \textit{rhoenv} included in rhoenvs \LaTeX\ package. Here you can include relevant information or notes about your work. You can modify my title directly in the code.
-        \end{rhoenv}
-    
-        Rhoenv is the only environment that you can customize its title. On the other hand, \textit{info} and \textit{note} adapt their title to Spanish automatically when the language package is defined.
-
-    \subsection{Rhobabel}
-
-        In this new version, we have included a package called \textit{rhobabel}, which have all the commands that automatically translate from English to Spanish when this language package is defined. 
+        \begin{itemize}
+            \item \inlinecode{\figref{}} — Uses the label style defined by \inlinecode{\figlabel}.
+            \item \inlinecode{\figsref{}} — Uses the label style defined by \inlinecode{\figslabel}.
+            \item \inlinecode{\tabref{}} — Uses the label style defined by \inlinecode{\tablabel}.
+            \item \inlinecode{\coderef{}}  — Uses the label style defined by \inlinecode{\captionlabelcode}.
+            \item \inlinecode{\equref{}} — Uses the label style defined by \inlinecode{\eqlabel}.
+        \end{itemize}
         
-        By default, rho displays its content in English. However, at the beginning of the document you will find a recommendation when writing in Spanish. 
+    These commands generate fully hyperlinked references, both the label and the number, ensuring navigation to the referenced element when clicked in the PDF.
+
+\section{Figures}
 		
-        \textit{Note:} You may modify this package if you want to use other language than English or Spanish. This will make easier to translate the document without having to modify the class document.
+    \figref{fig:figure} shows a 3D surface visualization of a bivariate function.
+    		
+    \begin{figure}[H]
+    	\centering
+    	\includegraphics[width=0.7\columnwidth]{figures/Example.pdf}
+    	\caption{3D surface obtained from PGFPlots \cite{PFGPlots}.}
+    	\label{fig:figure}
+    \end{figure}
 
-\section{Figures and tables}
+\section{Tables}
+	
+        \tabref{tab:table} shows an example table of some astronomical objects. 
 
-    \subsection{Sample figure}
+        \begin{table}[H]
+        	\caption{Astronomical Object Data}
+        	\label{tab:table}
+        	\begin{tabular}{
+        		>{\raggedright\arraybackslash}p{0.25\columnwidth}
+        		>{\raggedright\arraybackslash}p{0.29\columnwidth}
+        		>{\raggedright\arraybackslash}p{0.31\columnwidth}
+        	}
+        	\toprule
+        	\textbf{Object} & \textbf{Type} & \textbf{Distance (Light Years)} \\
+        	\midrule
+        	Alpha Centauri & Star system & 4.37 \\
+        	Betelgeuse & Red supergiant star & 642.5 \\
+        	Andromeda & Spiral galaxy & 2.537 million \\
+        	Earth & Planet & 0 \\
+        	Sirius & Binary star system & 8.6 \\
+        	\bottomrule
+        	\end{tabular}
+        	\tabletext{Note: The table contains data of some famous celestial objects.}
+        \end{table}
 
-        Figure \ref{fig:figure} shows an example figure.
+        The \inlinecode{\tabletext{}} command is used to add notes to tables easily. 
+
+\section{Document Data}
+
+    \subsection{Front-Matter Footer Block*}
+
+        A new block called \inlinecode{\docinfo{}}, has been added to the bottom right of the first page, acting as a floating element which stays fixed in place. This replaces the corresponding author block previously located above the abstract in earlier versions.
+
+        The \inlinecode{\docinfo{}} block was created to give you greater control over supplementary document data, such as publication dates, licensing information, extended author details, and other front-matter notes. You can fully customize its content to suit your needs.
+
+        Additionally, the new \inlinecode{\corres{}} command serves as a flexible alternative to \inlinecode{\thanks{}}. Since modifying the standard \inlinecode{\thanks{}} command can be complex and its positioning is often rigid, \inlinecode{\corres{}} was introduced to offer a more adaptable solution without sacrificing functionality. 
         
-            \begin{figure}[H]
-                \centering
-                \includegraphics[width=0.71\columnwidth]{Example.pdf}
-                \caption{Example figure obtained from PGFPlots \cite{PFGPlots}.}
-                \label{fig:figure}
-            \end{figure}
+        \begin{note}
+            You can use \verb|\corres{}| as many times as needed since it automatically ensures that each entry remains correctly associated. For best results, I recommend using text symbols rather than mathematical ones (e.g., \verb|\textasteriskcentered|, \verb|\textdagger|, etc.). 
+        \end{note}
 
-    \subsection{Sample double figure}
+        If \inlinecode{\corres{}} is not used, \inlinecode{\docinfo{}} will automatically adjust its position. The implementation was designed to handle any combination of front-matter elements you might need when starting your document. In this example template, you’ll find a minimal demonstration that combines both to illustrate their interaction.
 
-        Figure \ref{fig:examplefloat} shows an example of a two-picture floating figure that covers the width of the page. It can be positioned at the top or bottom of the page. The space between the figures can also be changed using the \verb|\hspace{Xpt}| command.
+    \subsection{Headers and Footers*}
 
-        \begin{figure*}[t!] % t for position at the top of the current page; b for position at the bottom of the current page
-            \centering
-                \begin{subfigure}[b]{0.38\linewidth} % Fig (a)
-                    \includegraphics[width=\linewidth]{Example2.pdf}
-                    \caption{Example left figure.}
-                    \label{fig:figa}
-                \end{subfigure}
-            \hspace{15pt}   % Space between the figures
-                \begin{subfigure}[b]{0.38\linewidth} % Fig (b)
-                    \centering
-                    \includegraphics[width=\linewidth]{example2.pdf}
-                    \caption{Example right figure.}
-                    \label{fig:figb}
-                \end{subfigure}
-            \caption{Example figure that covers the width of the page obtained from PGFPlots \cite{PFGPlots}.}
-            \label{fig:examplefloat}
-        \end{figure*}
+        \subsubsection{Headers}
 
-    \subsection{Sample table}
+            On all pages except the first, the document title and journal appear in the header. Since twoside layout is enabled, its position alternates depending on whether the page is odd or even.
 
-        In the same way as the figures, you can place tables in one or two columns, depending on the length of the table.
+        \subsubsection{Footers}
 
-        Table \ref{tab:table}, shows an example table that covers the width of the page positioned at the bottom of a new page.
+            In the first page, six elements display supplementary information for your document:
 
-        \begin{table*}[pb]
-            \RaggedRight
-            \caption{Table example that covers the width of the page.}
-            \label{tab:table}
-                \begin{tabular}{lllp{12.2cm}}
-                    \toprule
-                    \textbf{Day} & \textbf{Min Temp} & \textbf{Max Temp} & \textbf{Summary} \\ 
-                    \midrule
-                    Monday & 11\textdegree C & 22\textdegree C & A clear day with lots of sunshine.  Strong breeze will bring down the temperatures. \\
-                    Tuesday & 9\textdegree C & 19\textdegree C & Cloudy with rain, across many northern regions. \\
-                    Wednesday & 10\textdegree C & 21\textdegree C & Rain will still linger for the morning. 
-                    Conditions will improve by early afternoon and continue 
-                    throughout the evening.\\
-                    \bottomrule
-                \end{tabular}
-                
-            \tabletext{Note: Obtained from \LaTeX\ tables \cite{projects-2023}.}
-            
-        \end{table*}
+            \begin{itemize}
+                \item \inlinecode{\journalname{}} — Displays the journal name, university, institute, company, or any institutional affiliation.
+                \item \inlinecode{\theday{}} — Displays the current date.
+                \item \inlinecode{\vol{}} — Specifies the volume number of the publication.
+                \item \inlinecode{\no{}} — Specifies the issue number within the volume.
+                \item \inlinecode{\journal{}} — Defines the full journal title.
+                \item \inlinecode{\thepage} — Shows the current page number and the total count.
+            \end{itemize}
+
+             In all cases, you can freely rearrange or customize the order of these elements by modifying the class file to suit your needs. If any of them are not required, simply omit the corresponding command — the remaining elements will automatically adjust their spacing to remain evenly distributed.
+
+\section{Rho Custom Packages}
+
+    \subsection{Rhobabel.sty}
+		
+		This package have all the commands that automatically translate from English to Spanish when this custom package is defined. 
+		
+		By default, this document has its content in English. However, at the beginning of the document you will find a recommendation when writing in Spanish. 
+		
+		You may modify this package if you want to use other language than English or Spanish. This will make easier to translate your document without having to modify the class document.
+
+    \subsection{Rhoenvs.sty}
+
+        This package provides custom environments designed to enhance the visual presentation and structure of your document. Key examples include rhoenv, info, and note.
+        
+		Their style is defined by \inlinecode{rhoenvstyle} — allowing you to customize their appearance according to your document’s requirements.
+
+		An example using the \inlinecode{rhoenv} environment is shown below.
+		
+		\begin{rhoenv}[frametitle=Custom Title]
+			This is an example of the custom title environment. To add a title type this command \verb|[frametitle=Custom Title]| next to the beginning of this environment (as shown in this example).
+		\end{rhoenv}
+
+        The \inlinecode{info} and \inlinecode{note} are environments which have a predefined title and translate their title to Spanish automatically when this language is defined.
+
+\section{Equations}
+
+	\equref{eq:equation} shows the Schrödinger equation as an example. 
+
+    \begin{equation}\label{eq:equation}
+        i\hbar \frac{\partial }{\partial t}\Psi(\mathbf{r},t) = \left[\frac{-\hbar^2}{2m}\nabla^2 + V(\mathbf{r},t) \right]\Psi(\mathbf{r},t)
+    \end{equation}
+	
+	The \inlinecode{amssymb} and \inlinecode{amsmath} packages were not required, as \href{https://ctan.org/pkg/stix2-otf/}{STIX2} font incorporates mathematical symbols for writing quality equations.
+	
+	\begin{note}
+		If you would like to change the values that adjust the spacing above and below the equations, change the \verb|\eqskip| value until the preferred spacing is set. The default value is set to 9pt.
+	\end{note}
 
 \section{Codes}
 
-    This class\footnote{Hello there! I am a footnote :)} includes the \textit{listings} package, which offers customized features for adding codes specially for C, C++, \LaTeX\ and Matlab. You can customize the format in \textit{rho class} file.
+	\subsection{Coding with Minted*}
+	
+		The \inlinecode{minted} package offers customized features for adding codes. In addition, the template is designed to work seamlessly with Fira Code, a monospaced font specially crafted for programming environments.
 
-    \nolinenumbers
-    \lstinputlisting[caption=Example of matlab code., label={lst:listing-Mat}, language=Matlab]{example.m}
-    \linenumbers
-    
-    If line numbering is enabled, we recommend placing the command \verb|\nolinenumbers| at the beginning and \verb|\linenumbers| at the end of the code. 
-    
-    This will temporarily remove line numbering and the code will look better.
-
-\section*{Unnumbered section} \label{sec:unsec}
-
-    If a unnumbered section is declared, a square appears followed by the section name. This style is characteristic of this class and is only for first level sections.
-
-    Since this affects the title of the table of contents and references, you can make a modification in \textit{rho-class/rho.cls/section style} to remove the square. See appendix for more information.
-
-\section{Table of contents}
-
-    The ToC provides a preview of the content and its location in the document. Uncomment the command \verb|\tableofcontents| to display it. Remember that unnumbered sections will not appear in the ToC, however, you can place them manually with the command \verb|\addcontentsline{toc}{section}{section name}|.
-
-    See the appendix section for more information. There, you will find recommended modifications to adjust the table of contents when unnumbered sections are defined.
-
-\section{Reference style}
-
-    The default formatting for references follows the IEEE style. At the end of the document, you will find an example of the default reference formatting.
-
-    You can modify the style of your references, for that, go to \textit{rho-class/rho.cls/biblatex}. See appendix for more information.
-
-\section{Appendix}
-
-    \subsection{Unnumbered sections}
-
-        As mentioned in section \ref{sec:unsec}, when placing a first level section without number a square appears followed by the section name. In case you do not require this extra detail, you can make the following modification.
-
-\nolinenumbers
-\begin{lstlisting}[language=TeX, caption=Alternative unnumbered section.]
-\titleformat{name=\section,numberless}[block]
-    {\color{rhocolor}\sffamily\large\bfseries}
-    {}
-    {0em}
-    {#1}
-    []
-\end{lstlisting}
-\linenumbers
-
-        You can change to this code in \textit{rho-class/rho.cls/section style}. Once the document is recompiled, this square will disappear. 
-
-        Remember that this code affects the ToC and references title. To show rho class functionalities, this option is enabled by default.
-
-    \subsection{Table of contents}
-    
-        In case you have chosen the unnumbered sections and you want to add the ToC, you can do the following to adjust the content.
-
-\nolinenumbers
-\begin{lstlisting}[language=TeX, caption=ToC when unnumbered section is chosen.]
-\setlength\tocsep{0pc}
-
-\titlecontents{section}[\tocsep]
-    {\addvspace{4pt}\sffamily\selectfont\bfseries}
-    {\contentslabel[\thecontentslabel]{\tocsep}}
-    {}
-    {\hfill\thecontentspage}
-    []
-
-\titlecontents{subsection}[1pc]
-    {\addvspace{4pt}\small\sffamily\selectfont}
-    {\contentslabel[\thecontentslabel]{\tocsep}}
-    {}
-    {\ \titlerule*[.5pc]{.}\ \thecontentspage}
-    []
-
-\titlecontents*{subsubsection}[1pc]
-    {\footnotesize\sffamily\selectfont}
-    {}
-    {}
-    {}
-    [\ \textbullet\ ]
-\end{lstlisting}
-\linenumbers
-
-        As you can see, the value of \verb|\tocsep| was changed to 0pc for the sections. For subsections and subsubsections the value was changed to 1pc.
-
-        By making this small modification, the contents of the ToC will look more organized.
-
-        If you use numbered sections, you do not need to make this modifications, unless you prefer other values.
-
-    \subsection{References and paths}
-
-        In case you require another reference style, you can go to \textit{rho-class/rho.cls/biblatex} and modify the following. 
-
-\nolinenumbers
-\begin{lstlisting}[language=TeX, caption=Reference code.]
-\usepackage[
-    backend=biber,
-    style=ieee,
-    sorting=ynt
-]{biblatex}
-\end{lstlisting}
-\linenumbers
-
-        By default, rho class has its own .bib for this example, if you want to name your own bib file, change the following path.
-
-\nolinenumbers
-\begin{lstlisting}[language=TeX]
-\addbibresource{rho.bib}
-\end{lstlisting}
-\linenumbers
-
-    \subsection{Info environment}
-
-        We will show an example of the info environment declared in the ‘rhoenvs.sty’ package. Remember that \textit{info} and \textit{note} are the only packages that translate their title (English or Spanish).
-
-        \begin{info}
-            Small example of info environment.
-        \end{info}
-
-\section{Supporting}
-
-    Did you like this class document? Check out \href{https://www.overleaf.com/latex/templates/tau-class-lab-report-template/chhshmhxstsq}{tau class} designed for your lab reports.
-
-    \subsection*{Any contributions are welcome!}
-    
-        Coffee keeps us awake and helps us create better \LaTeX\ templates. If you wish to support our work, you can do so through PayPal:\\
-        \url{https://www.paypal.me/GuillermoJimeenez}.
+        If your are using a desktop app as \href{https://www.texstudio.org/}{TeXstudio}, try these steps to make this package work on Windows:
+		
+		\begin{enumerate}
+			\item Install Python — A stable version (e.g., v.3.11)
+			\item Open the terminal and type \inlinecode{pip install Pygments}.
+			\item Update if a newer version is available.
+			\item Go to TeXStudio settings and change the default compiler to \inlinecode{pdflatex --shell-escape -interaction=nonstopmode \%.tex}.
+			\item Compile and wait for the result.
+		\end{enumerate}
         
+		\vspace*{-9pt}
+        
+		\begin{rhoenv}[frametitle=Caution]
+			Ensure that \textbf{pygments} is properly installed and added to your system’s PATH. Otherwise, you may encounter compilation errors. Additionally, enable shell escape when compiling, as it is required for minted to process and highlight code.
+		\end{rhoenv}
+		
+		In \href{https://es.overleaf.com/}{Overleaf}, this package is easier to use since it does not require any additional installations or modifications — just add the code as shown in the example. \coderef{lst:example} shows a Python example.
+		
+		\begin{code}
+			\inputminted{python}{example.py}
+            \caption{Python code example with minted.}
+			\label{lst:example}
+		\end{code}
+		
+		You can customize its design changing \inlinecode{\usemintedstyle} command. The different styles offered by the \href{https://ctan.org/pkg/minted}{minted package} can be preview through this link — \url{https://pygments.org/styles/}.
+
+    \subsection{Coding with Listings}
+	
+		Since \inlinecode{minted} requires additional installations and can be complex in some desktop \TeX\ editors, you can use the \inlinecode{listings} package instead, which provides a simpler way to include code.
+		
+		\begin{code}
+			\lstinputlisting[language=python]{example.py}
+			\label{lst:example2}
+            \caption{Python code example with listings.}
+		\end{code}
+		
+		While \inlinecode{listings} is a simpler and widely supported package for code formatting, \inlinecode{minted} offers a more modern and powerful approach. It leverages the Pygments syntax highlighter to deliver superior coloring, language support, and styling options. One of its key advantages is the ability to easily switch between built-in color styles.
+		
+		In contrast, \inlinecode{listings} requires manual setup for colors, fonts, and formatting rules.
+		For users who prefer fine-tuned customization, the styling options for \inlinecode{listings} are organized in \inlinecode{rho.cls} file and can be modified at any time to suit individual preferences.
+
+	\subsection{Inline Code*}
+	
+		As shown in this template, inline code has a custom style for improved visual appeal. To use it, simply add \inlinecode{\inlinecode{}} command and place your code inside the braces.
+
+\section*{Numberless section}
+\addcontentsline{toc}{section}{Numberless section}
+
+    Declaring a numberless section automatically inserts a square symbol before the title. This unique feature is specific to first-level sections within this class.
+    
+    As this symbol also affects the table of contents and references titles, users who prefer to disable it may edit the section styling parameters in \inlinecode{rho.cls}.
+
+\section{Bibliography}
+		
+	Bibliography management is handled by \inlinecode{biblatex}, with the default citation and reference style set to IEEE. The \inlinecode{citestyle=numeric-comp} option is enabled, allowing multiple citations to be grouped within a single bracket (e.g., \cite{davis2023signalflow,bell2022codefont}). The citation format can be customized directly in \inlinecode{rho.cls} to suit any preferred style.
+
+\section*{FAQ}
+\addcontentsline{toc}{section}{FAQ}
+
+    \subsection*{How do I manage my references?}
+    \addcontentsline{toc}{subsection}{How do I manage my references?}
+        
+        To manage your references, I recommend using the tool \href{https://www.scribbr.es/citar/generador/folders/73QOXYsCwMRu4ifQaN65mx/lists/msTfx7GJjIAOUkufbISnA/}{scribbr}. You can simply enter the URL or create your own citation, and then export it to \LaTeX{} using the options in the three-dot menu.
+            
+        The generated citation can be copied and pasted into \inlinecode{rho.bib}, the file designated for bibliography management. You may rename this file, but if you do, remember to update the \inlinecode{\addbibresource} command in \inlinecode{rho.cls} under the biblatex section.
+    
+        \begin{note}
+            Some platforms, such as Google Scholar or scientific journals, provide citations directly in BibTeX format. Therefore, check if there is a ``how to cite this document'' section to streamline the citation process even further.
+        \end{note}
+
+        If you have any further questions, you can refer to the following page — \href{https://es.overleaf.com/learn/latex/Bibliography_management_with_biblatex}{Bibliography management with biblatex}.
+        
+    \subsection*{What should I do with the example files?}
+    \addcontentsline{toc}{subsection}{What should I do with the example files?}
+
+        The template includes sample content — such as an example figure, bibliography entries, and the \inlinecode{example.py} script — to demonstrate how the layout and features work. Once you start customizing the document for your own use, feel free to delete all example files and entries you don’t need.
+
+    \subsection*{How do I place equations easily?}
+    \addcontentsline{toc}{subsection}{How do I place equations easily?}
+
+        For equations, we have two options: inline or on its own line. For inline equations, simply place a dollar sign (\$) at the beginning and end of the equation. However, if you want the equation to be displayed on its own line, you need to use the equation environment.
+        
+        If you find it challenging to write formulas directly in \LaTeX, you can use text editors like Word. In the equations menu, you can select \LaTeX\ in the conversion section and copy and paste the equation you wrote into one of these two environments.
+
+    \subsection*{How do I change the paper size?}
+    \addcontentsline{toc}{subsection}{How do I change the paper size?}
+
+        By default, this class was adapted for a4paper and test it with letterpaper. The following paper sizes are available in \LaTeX:
+
+        \begin{itemize}
+            \item letterpaper (11 $\times$ 8.5 in)
+            \item legalpaper (14 $\times$ 8.5 in)
+            \item executivepaper (10.5 $\times$ 7.25 in)
+            \item a4paper (21 $\times$ 29.7 cm)
+            \item a5paper (21 $\times$ 14.8 cm)
+            \item b5paper (25 $\times$ 17.6 cm)
+       \end{itemize}
+
+\section*{Contact me}
+\addcontentsline{toc}{section}{Contact me}
+    
+    Have questions, suggestions, or an idea for a new feature? Found a bug or working on a project you’d like to invite me to?  
+    
+    Feel free to reach out — I’d be happy to help, collaborate, or fix the issue.  Your feedback helps me improve my templates!
+
+    \AtBeginEnvironment{tabular}{\normalsize\sffamily\selectfont}
+    \begin{center}
+        \setlength{\tabcolsep}{3pt}
+        \begin{tabular}{cl}
+            \faEnvelope & \href{mailto:memo.notess1@gmail.com}{memo.notess1@gmail.com} \\
+            \faGlobe{} & \href{https://memonotess1.wixsite.com/memonotess}{memonotess.com} \\
+            \faInstagram{} & \href{https://www.instagram.com/memo.notess/}{@memo.notess}
+        \end{tabular}
+    \end{center}
+
+\section*{Github Repository}
+\addcontentsline{toc}{section}{Github Repository}
+
+    Visit the repository to access the source code, track ongoing development, report issues, and stay up to date with the latest changes.
+
+    \begin{center}
+        \setlength{\tabcolsep}{3pt}
+        \begin{tabular}{cl}
+             \faGithub &  \url{https://github.com/MemoJimenez/Rho-class}\\
+        \end{tabular}
+    \end{center}
+
+\section*{Supporting}
+\addcontentsline{toc}{section}{Supporting}
+
+    Enjoyed this document class? Check out tau-class, my very first \LaTeX{} template.
+
+    \begin{center}
+        \setlength{\tabcolsep}{3pt}
+        \begin{tabular}{cl}
+             \faLink &  \href{https://es.overleaf.com/latex/templates/tau-class-lab-report-template/chhshmhxstsq}{https://es.overleaf.com/latex/templates/tau-class}\\
+        \end{tabular}
+    \end{center}
+    
+    \subsection*{Any contributions are welcome!}
+    \addcontentsline{toc}{subsection}{Any contributions are welcome!}
+    
+        Coffee keeps me awake and helps me create better \LaTeX\ templates. If you wish to support my work, you can do so through PayPal: 
+
         \begin{center}
-            Enjoy writing with rho \LaTeX\ class\hspace{5pt}\faChessKnight 
+            \setlength{\tabcolsep}{3pt}
+            \begin{tabular}{cl}
+                 \faPaypal & \textbf{\url{https://www.paypal.me/GuillermoJimeenez}}\\
+            \end{tabular}
+            \vskip9pt
+            Enjoy writing with rho-class!
         \end{center}
 
-\section{Contact us}
-
-    You can contact us through these methods.\\
-    
-    \noindent\faWix\hspace{5pt}\href{https://memonotess1.wixsite.com/memonotess}{https://memonotess1.wixsite.com/memonotess} \\
-    \faEnvelope[regular]\hspace{7pt}memo.notess1@gmail.com \\
-    \faEnvelope[regular]\hspace{7pt}eduardo.gracidas29@gmail.com \\
-    \faInstagram\hspace{8pt}memo.notess
-        
 %----------------------------------------------------------
 
 \printbibliography

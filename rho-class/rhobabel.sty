@@ -1,11 +1,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % --------------------------------------------------------
-% Rhobabel
-% LaTeX Package
-% Version 1.0.1 (14/08/2024)
+%  ____  _           _           _          _ 
+% |  _ \| |__   ___ | |__   __ _| |__   ___| |
+% | |_) | '_ \ / _ \| '_ \ / _` | '_ \ / _ \ |
+% |  _ <| | | | (_) | |_) | (_| | |_) |  __/ |
+% |_| \_\_| |_|\___/|_.__/ \__,_|_.__/ \___|_|
+% 
+% LaTeX2e Package
+% Version 2.0.0 (24/02/2026)
 %
 % Authors: 
 % Guillermo Jimenez (memo.notess1@gmail.com)
+%
+% Contributor:
 % Eduardo Gracidas (eduardo.gracidas29@gmail.com)
 % 
 % License:
@@ -13,111 +20,122 @@
 % --------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % --------------------------------------------------------
-%                        WARNING!
+% Find the latest version on GitHub:
+% https://github.com/MemoJimenez/Rho-class
 % --------------------------------------------------------
-% Do not remove this package from 'rho-class/rho.cls' to 
-% avoid compilation problems. This package defines the 
-% translation to spanish for some parts of the text.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% --------------------------------------------------------
+% Keep This Package!
+% --------------------------------------------------------
+% This package provides multilingual support, with English 
+% and Spanish enabled by default. It defines some document 
+% labels and can be extended to other languages if needed.
+% --------------------------------------------------------
+% Do not remove it from 'rho.cls' file. Removal may cause 
+% undefined commands or compilation errors.
 % --------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %----------------------------------------------------------
-% PACKAGE CONFIGURATION
+% Package configuration
 %----------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{rho-class/rhobabel}[2024/05/21]
+\ProvidesPackage{rho-class/rhobabel}[24/02/2026 Rhobabel LaTeX2e package]
 
 %----------------------------------------------------------
-% KEYWORDS WORD
+% Label for "keywords" 
 %----------------------------------------------------------
 
-\newcommand{\keywordname}{{\keywordheadfont Keywords: }}
+\newcommand{\keywordname}{{\keywordheadfont{Keywords:~}}}
 
 %----------------------------------------------------------
-% AUTHOR "AND" LANGUAGES
+
+% Tip: Change manually the second {} if using another language
+
+%----------------------------------------------------------
+% Language labels for cross-references
 %----------------------------------------------------------
 
-\newcommand{\andlanguage}{
-    \iflanguage{spanish}{
+% Cross-reference label for figure
+\newcommand{\figlabel}{%
+    \iflanguage{spanish}{%
+        {Fig.}%
+    }{%else
+        {Fig.}%
+    }%
+}
+
+% Cross-reference label for figures
+\newcommand{\figslabel}{%
+    \iflanguage{spanish}{%
+        {Figs.}%
+    }{%else
+        {Figs.}%
+    }%
+}
+
+% Cross-reference label for tables
+\newcommand{\tablabel}{%
+    \iflanguage{spanish}{%
+        {Tabla}%
+    }{%else
+        {Table}%
+    }%
+}
+
+% Caption and cross-reference label for codes
+\newcommand{\captionlabelcode}{%
+    \iflanguage{spanish}{%
+        {C\'odigo}%
+    }{%else
+        {Code}%
+    }%
+}
+
+% Cross-reference label for equations
+\newcommand{\eqlabel}{%
+    \iflanguage{spanish}{%
+        {Ecuaci\'on}%
+    }{%else
+        {Equation}%
+    }%
+}
+
+%----------------------------------------------------------
+% Conjunction used between author names 
+%----------------------------------------------------------
+
+\newcommand{\andlanguage}{%
+    \iflanguage{spanish}{%
         { y }%
-    }{%
+    }{%else
         { and }%
     }%
 }
 
 %----------------------------------------------------------
-% ARTICLE INFORMATION LANGUAGES
+% Translatable titles for custom environments
 %----------------------------------------------------------
 
-% Change manually the second {} if using another language babel
-
-\newcommand{\correslanguage}{
-    \iflanguage{spanish}{
-        {Autor de correspondencia: }%
-    }{%
-        {Corresponding author: }%
+% Info environment
+\newcommand{\infolanguage}{%
+    \iflanguage{spanish}{%
+        {Informaci\'on}%
+    }{%else
+        {Information}%
     }%
 }
 
-\newcommand{\emaillanguage}{
-    \iflanguage{spanish}{
-        {Correo electr\'onico: }%
-    }{%
-        {E-mail address: }%
-    }%
-}
-
-\newcommand{\receivedlanguage}{
-    \iflanguage{spanish}{
-        {Recibido: }%
-    }{%
-        {Received: }%
-    }%
-}
-
-\newcommand{\revisedlanguage}{
-    \iflanguage{spanish}{
-        {Revisado: }%
-    }{%
-        {Revised: }%
-    }%
-}
-
-\newcommand{\acceptedlanguage}{
-    \iflanguage{spanish}{
-        {Aceptado: }%
-    }{%
-        {Accepted: }%
-    }%
-}
-
-\newcommand{\publishedlanguage}{
-    \iflanguage{spanish}{
-        {Publicado: }%
-    }{%
-        {Published: }%
+% Note environment
+\newcommand{\notelanguage}{%
+    \iflanguage{spanish}{%
+        {Nota}%
+    }{%else
+        {Note}%
     }%
 }
 
 %----------------------------------------------------------
-% ENVIRONMENTS LANGUAGES
-%----------------------------------------------------------
 
-% Information/Informaci\'on language setup
-\newcommand{\infolanguage}{
-    \iflanguage{spanish}{
-        {\bfseries\noindent Informaci\'on}%
-    }{%
-        {\bfseries\noindent Information}%
-    }%
-}
-
-% Note/Nota language setup
-\newcommand{\notelanguage}{
-    \iflanguage{spanish}{
-        {\bfseries\noindent Nota}%
-    }{%
-        {\bfseries\noindent Note}%
-    }%
-}
+\endinput
