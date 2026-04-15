@@ -1,4 +1,4 @@
-# Rho ~ Version 3.0.0
+# Rho ~ Version 3.0.1
 
 ## Description
 
@@ -65,6 +65,12 @@ Feel free to reach out — I’d be happy to help, collaborate, or fix the issue
 - **Website**:   https://memonotess1.wixsite.com/memonotess
 
 ## Updates Log
+
+### Version 3.0.1 (15/04/2026)
+
+A small but important compatibility fix for Spanish documents.
+
+1. Replaced all occurrences of `~` with `\nobreakspace` in command definitions throughout `rho.cls` and `rhobabel.sty`. The `~` character becomes active under `babel` with the `spanish` option, causing compilation errors when used inside `\newcommand` definitions.
 
 ### Version 3.0.0 (24/02/2026)
 

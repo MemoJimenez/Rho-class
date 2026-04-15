@@ -7,7 +7,7 @@
 % |_| \_\_| |_|\___/       \___|_|\__,_|___/___/
 %
 % LaTeX2e Class
-% Version 3.0.0 (24/02/2026)
+% Version 3.0.1 (15/04/2026)
 %
 % Author: 
 % Guillermo Jimenez (memo.notess1@gmail.com)
@@ -36,7 +36,7 @@
 %----------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{rho-class/rho}[24/02/2026 Rho LaTeX2e class]
+\ProvidesClass{rho-class/rho}[15/04/2026 Rho LaTeX2e class]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{extarticle}}
 \ProcessOptions\relax
 \LoadClass{extarticle}
@@ -164,11 +164,11 @@
 \RequirePackage{bookmark}
 
 % New commands for figure-, table-, code- cross references
-\newcommand{\figref}[1]{\hyperref[#1]{\figlabel~\ref*{#1}}}
-\newcommand{\figsref}[1]{\hyperref[#1]{\figslabel~\ref*{#1}}}
-\newcommand{\tabref}[1]{\hyperref[#1]{\tablabel~\ref*{#1}}}
-\newcommand{\coderef}[1]{\hyperref[#1]{\captionlabelcode~\ref*{#1}}}
-\newcommand{\equref}[1]{\hyperref[#1]{\eqlabel~\ref*{#1}}}
+\newcommand{\figref}[1]{\hyperref[#1]{\figlabel\nobreakspace\ref*{#1}}}
+\newcommand{\figsref}[1]{\hyperref[#1]{\figslabel\nobreakspace\ref*{#1}}}
+\newcommand{\tabref}[1]{\hyperref[#1]{\tablabel\nobreakspace\ref*{#1}}}
+\newcommand{\coderef}[1]{\hyperref[#1]{\captionlabelcode\nobreakspace\ref*{#1}}}
+\newcommand{\equref}[1]{\hyperref[#1]{\eqlabel\nobreakspace\ref*{#1}}}
 
 %----------------------------------------------------------
 % Items
@@ -203,8 +203,8 @@
     \fancyfoot[L]{
         {\ifx\@journalname\undefined\else\footerfont\bfseries\@journalname\hspace{8pt}\fi}
         {\ifx\@theday\undefined\else\footerfont\@theday\hspace{8pt}\fi}
-        {\ifx\@vol\undefined\else\footerfont{Vol.~}\@vol\hspace{8pt}\fi}
-        {\ifx\@no\undefined\else\footerfont{No.~}\@no\hspace{8pt}\fi}
+        {\ifx\@vol\undefined\else\footerfont{Vol.\nobreakspace}\@vol\hspace{8pt}\fi}
+        {\ifx\@no\undefined\else\footerfont{No.\nobreakspace}\@no\hspace{8pt}\fi}
         }
     \fancyfoot[R]{
         {\ifx\@journal\undefined\else\footerfont\@journal\hspace{8pt}\fi}
